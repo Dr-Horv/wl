@@ -15,7 +15,7 @@ def pretty_print_oxford(results):
         print("    Synonyms: {}".format(", ".join(r.get("synonyms"))))
 
 
-def synonym_anyonym_lookup(query):
+def synonym_antonym_lookup(query):
     oxford = OxfordDictionaryService(constants.OXFORD_APP_ID, constants.OXFORD_API_KEY)
     results = oxford.lookup_anyonyms_and_synonyms(query)
     print('Query: {}'.format(query))
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     query = " ".join(args.query)
 
     if args.s:
-        synonym_anyonym_lookup(query)
+        synonym_antonym_lookup(query)
     else:
         wikipedia_translation(query, args.from_lang, args.to_lang)
 
