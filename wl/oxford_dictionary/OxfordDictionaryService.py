@@ -9,13 +9,9 @@ class OxfordDictionaryService(object):
         self.api_key = api_key
 
     def lookup_anyonyms_and_synonyms(self, word):
-        # TODO: replace with your own app_id and app_key
-
         language = 'en'
         word_id = word
-
         url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + language + '/' + word_id.lower() + '/synonyms;antonyms'
-
         r = requests.get(url, headers={'app_id': self.app_id, 'app_key': self.api_key})
 
         if r.ok:

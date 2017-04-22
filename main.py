@@ -2,7 +2,7 @@
 
 import argparse
 
-import wl.constants as Constants
+import wl.constants as constants
 
 from wl.oxford_dictionary.OxfordDictionaryService import OxfordDictionaryService
 from wl.wikipedia.WikipediaService import WikipediaService
@@ -16,7 +16,7 @@ def pretty_print_oxford(results):
 
 
 def synonym_anyonym_lookup(query):
-    oxford = OxfordDictionaryService(Constants.OXFORD_APP_ID, Constants.OXFORD_API_KEY)
+    oxford = OxfordDictionaryService(constants.OXFORD_APP_ID, constants.OXFORD_API_KEY)
     results = oxford.lookup_anyonyms_and_synonyms(query)
     print('Query: {}'.format(query))
     pretty_print_oxford(results)
