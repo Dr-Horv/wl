@@ -3,7 +3,7 @@ import requests
 BASE = 'https://{lang}.wikipedia.org/w/api.php?action=query&format=json'
 
 
-class WikipediaService:
+class WikipediaService(object):
 
     @staticmethod
     def search(word, from_lang, to_lang):
@@ -19,6 +19,9 @@ class WikipediaService:
                 title = WikipediaService.check_for_lang_in_page(v, to_lang)
                 if title:
                     return title
+
+            if not dump.get('continue'):
+                break
 
             ll = dump.get('continue').get('llcontinue')
             con = dump.get('continue').get('continue')
