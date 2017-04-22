@@ -1,2 +1,2 @@
 # wl
-Word lookup, allows lookup of antonyms, synonyms etc of word from the cli
+Cli tool for word lookup, allows translation of words via Wikipedia and lookup of antonyms, synonyms of word.
